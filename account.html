@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Custom Bank Cards Store</title>
+</head>
+<body>
+    <header>
+        <!-- Header content as before -->
+    </header>
+
+    <section class="products">
+        <div class="container">
+            <div class="product" id="product1">
+                <img src="card1.jpg" alt="Card 1">
+                <h2>Gold Premium Card</h2>
+                <p class="price">$99.99</p>
+                <button onclick="addToCart('Gold Premium Card', 99.99)">Add to Cart</button>
+                <button onclick="buyNow('Gold Premium Card', 99.99)">Buy Now</button>
+            </div>
+
+            <div class="product" id="product2">
+                <img src="card2.jpg" alt="Card 2">
+                <h2>Silver Classic Card</h2>
+                <p class="price">$49.99</p>
+                <button onclick="addToCart('Silver Classic Card', 49.99)">Add to Cart</button>
+                <button onclick="buyNow('Silver Classic Card', 49.99)">Buy Now</button>
+            </div>
+
+            <!-- Add more product items as needed -->
+        </div>
+    </section>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cartList"></ul>
+            <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <footer>
+        <!-- Footer content as before -->
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ptask Science</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add styles to position the time, date, and location on the upper right */
+        #info-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #90cf83;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: right;
+        }
+
+        #time,
+        #date,
+        #location {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                
+            </div>
+
+            <div class="menu">
+                <ul>
+                
+                    <li><a href="store.html">SCIENTISTS</a></li>
+                    <li><a href="main.html">RESEARCHERS</a></li>
+                  
+<div>
+
+</div>
+                   
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Ptask <br><span>Earth & Life Science</span> <br>by: Arth, Dwayne and Ivan</h1>
+            <p class="par">WELCOME TO OUR WEBSITE, THIS WEBSITE TALKS ABOUT HYDROMETEOROLOGICAL.
+                <br>BENEFITS, SCIENTISTS AND EFFECTS.<br> 
+            </p>
+            <button class="cn"><a href="about.html">ABOUT US!</a></button>
+              
+        </div>
+
+<div>
+
+    </div>
+
+    <!-- Display time, date, and location in a stylish container -->
+    <div id="info-container">
+        <p id="time"></p>
+        <p id="date"></p>
+        <p id="location"></p>
+    </div>
+
+
+    <script>
+        // Function to update time
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            document.getElementById('time').innerHTML = 'Time: ' + hours + ':' + minutes + ':' + seconds;
+        }
+
+        // Function to update date
+        function updateDate() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1; // Months are zero-indexed
+            var day = now.getDate();
+            document.getElementById('date').innerHTML = 'Date: ' + year + '-' + month + '-' + day;
+        }
+
+        // Function to get and update location
+        function updateLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var latitude = position.coords.latitude;
+                    var longitude = position.coords.longitude;
+                    document.getElementById('location').innerHTML = 'Location: ' + latitude + ', ' + longitude;
+                }, function (error) {
+                    document.getElementById('location').innerHTML = 'Unable to retrieve location: ' + error.message;
+                });
+            } else {
+                document.getElementById('location').innerHTML = 'Geolocation is not supported by your browser.';
+            }
+        }
+
+        // Update time, date, and location every second
+        setInterval(function () {
+            updateTime();
+            updateDate();
+            updateLocation();
+        }, 1000);
+    </script>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+
+</html>
